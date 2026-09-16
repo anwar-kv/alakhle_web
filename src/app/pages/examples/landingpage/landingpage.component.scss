@@ -84,9 +84,20 @@
         
         &:hover { color: #28a745 !important; }
     }
-    .navbar-toggler-bar {
-        background: #28a745 !important;
+    
+    .navbar-toggler {
+        &:focus, &:active {
+            outline: none !important;
+            box-shadow: none !important;
+            background: transparent !important;
+        }
     }
+}
+
+/* Fix for mobile browsers turning phone numbers/emails blue in the contact footer */
+a[href^="tel"], a[href^="mailto"], a[x-apple-data-detectors] {
+    color: inherit !important;
+    text-decoration: none !important;
 }
 
 .section-catalog {
