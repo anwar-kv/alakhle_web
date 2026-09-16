@@ -94,10 +94,23 @@
     }
 }
 
-/* Fix for mobile browsers turning phone numbers/emails blue in the contact footer */
+/* Fix for all browsers turning phone numbers/emails blue, and override BLK default link colors in footer */
 a[href^="tel"], a[href^="mailto"], a[x-apple-data-detectors] {
     color: inherit !important;
     text-decoration: none !important;
+}
+
+.footer {
+    color: #6c757d !important;
+    
+    a, p, li, span {
+        color: #6c757d !important;
+        text-decoration: none !important;
+        
+        &:hover {
+            color: #212529 !important;
+        }
+    }
 }
 
 .section-catalog {
