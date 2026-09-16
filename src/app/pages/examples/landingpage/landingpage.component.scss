@@ -60,6 +60,14 @@
     }
 }
 
+/* Navbar Hamburger Color Fix */
+.navbar-light .navbar-toggler-bar {
+    background-color: #212529 !important;
+}
+.navbar-light .navbar-toggler {
+    border-color: rgba(0,0,0,0.1) !important;
+}
+
 /* Navbar Overrides to remove Pink */
 .navbar {
     .navbar-nav .nav-link {
