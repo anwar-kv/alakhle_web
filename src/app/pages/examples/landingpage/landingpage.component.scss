@@ -101,6 +101,8 @@ a[href^="tel"], a[href^="mailto"], a[x-apple-data-detectors] {
 }
 
 .footer {
+    background-color: #ffffff !important;
+    border-top: 1px solid #eaeaea !important;
     color: #6c757d !important;
     
     a, p, li, span {
@@ -111,6 +113,12 @@ a[href^="tel"], a[href^="mailto"], a[x-apple-data-detectors] {
             color: #212529 !important;
         }
     }
+}
+
+/* Force Cart Buttons to Green instead of Cyan */
+.btn-order {
+    background-image: linear-gradient(to bottom left, #34ce57, #28a745, #1e7e34) !important;
+    background-color: #28a745 !important;
 }
 
 .section-catalog {

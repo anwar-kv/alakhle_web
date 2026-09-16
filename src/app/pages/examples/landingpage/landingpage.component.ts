@@ -99,6 +99,7 @@ export class LandingpageComponent implements OnInit, OnDestroy {
         body.classList.remove("landing-page");
     }
 
+
     filterProducts(category: string) {
         this.activeCategory = category;
         if (category === "All") {
