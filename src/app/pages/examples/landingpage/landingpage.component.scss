@@ -68,29 +68,51 @@
     border-color: rgba(0,0,0,0.1) !important;
 }
 
-/* Navbar Overrides to remove Pink */
+/* Navbar Overrides to fix Mobile Menu */
 .navbar {
+    /* Desktop links */
     .navbar-nav .nav-link {
         color: #212529 !important;
         font-weight: 600;
         
         &:hover {
-            color: #28a745 !important; /* Green instead of pink */
+            color: #28a745 !important;
         }
     }
+    
+    /* Brand Logo */
     .navbar-brand {
         color: #28a745 !important;
         span { color: #212529 !important; }
-        
         &:hover { color: #28a745 !important; }
     }
     
+    /* Hamburger Icon */
     .navbar-toggler {
+        background: transparent !important;
+        border: 1px solid rgba(0,0,0,0.1) !important;
+        
         &:focus, &:active {
             outline: none !important;
             box-shadow: none !important;
             background: transparent !important;
         }
+    }
+    
+    .navbar-toggler-bar {
+        background-color: #212529 !important;
+        background: #212529 !important;
+    }
+}
+
+/* Force Mobile Menu Background to White */
+@media (max-width: 991px) {
+    .navbar-collapse {
+        background-color: #ffffff !important;
+        background: #ffffff !important;
+    }
+    .navbar-collapse .navbar-nav .nav-link {
+        color: #212529 !important;
     }
 }
 
