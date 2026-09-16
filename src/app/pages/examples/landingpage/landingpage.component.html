@@ -1,25 +1,15 @@
-<nav
-    class="navbar navbar-expand-lg fixed-top navbar-transparent"
-    color-on-scroll="100"
-    id="navbar-top"
->
+<nav class="navbar navbar-expand-lg fixed-top navbar-light bg-white shadow-sm" id="navbar-top">
     <div class="container">
         <div class="navbar-translate">
-            <a
-                class="navbar-brand"
-                href="#home"
-                placement="bottom"
-                tooltip="Groceries delivered by van"
-            >
-                <span>AL AKLEH</span> Goods Wholesalers LLC
+            <a class="navbar-brand text-success font-weight-bold" href="#home">
+                <i class="tim-icons icon-basket-simple mr-2"></i> 
+                AL AKLEH <span class="text-dark font-weight-normal">Wholesale</span>
             </a>
             <button
                 aria-controls="navigation-index"
-                aria-label="Toggle navigation"
-                class="navbar-toggler navbar-toggler"
+                class="navbar-toggler"
                 [attr.aria-expanded]="!isCollapsed"
                 (click)="isCollapsed = !isCollapsed"
-                id="navigation"
                 type="button"
             >
                 <span class="navbar-toggler-bar bar1"></span>
@@ -27,379 +17,165 @@
                 <span class="navbar-toggler-bar bar3"></span>
             </button>
         </div>
-        <div
-            class="navbar-collapse justify-content-end"
-            [collapse]="isCollapsed"
-            id="navigation"
-        >
-            <div class="navbar-collapse-header">
-                <div class="row">
-                    <div class="col-6 collapse-brand"><a>AL AKLEH</a></div>
-                    <div class="col-6 collapse-close text-right">
-                        <button
-                            aria-controls="navigation-index"
-                            aria-label="Toggle navigation"
-                            class="navbar-toggler"
-                            [attr.aria-expanded]="!isCollapsed"
-                            (click)="isCollapsed = !isCollapsed"
-                            id="navigation"
-                            type="button"
-                        >
-                            <i class="tim-icons icon-simple-remove"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <ul class="navbar-nav">
-                <!-- <li class="nav-item">
-                    <a class="nav-link" href="#home">Home</a>
-                </li> -->
+        <div class="navbar-collapse justify-content-end" [collapse]="isCollapsed">
+            <ul class="navbar-nav align-items-center">
                 <li class="nav-item">
-                    <a class="nav-link" href="#products">Products</a>
+                    <a class="nav-link text-dark font-weight-600" href="#products">Shop Catalog</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#about">About Us</a>
+                    <a class="nav-link text-dark font-weight-600" href="#about">About Us</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#contact">Contact</a>
+                    <a class="nav-link text-dark font-weight-600" href="#contact">Contact</a>
                 </li>
             </ul>
         </div>
     </div>
 </nav>
 
-<div class="wrapper">
+<div class="wrapper bg-light">
     <!-- Hero Section -->
-    <div
-        id="home"
-        class="page-header"
-        style="background-image: url('assets/img/van-hero.jpg')"
-    >
-        <div class="content-center">
-            <div
-                class="row row-grid justify-content-between align-items-center text-left"
-            >
-                <div class="col-lg-6 col-md-6">
-                    <h1 class="text-white">
-                        AL AKLEH Goods Wholesalers LLC <br />
-                        <span class="text-white">Foods & Beverages</span>
+    <div id="home" class="hero-responsive-wrapper">
+        <div class="hero-image-layer">
+            <img src="assets/img/hero-dubai-van.jpg" class="w-100" alt="AL AKLEH Van">
+            <div class="hero-gradient d-none d-md-block"></div>
+        </div>
+        <div class="hero-content-layer container">
+            <div class="row h-100 justify-content-end align-items-center">
+                <div class="col-lg-6 col-md-8 text-md-right text-center text-wrapper">
+                    <span class="badge badge-warning mb-3 px-3 py-2 text-uppercase letter-spacing-1 shadow-sm">Premium Wholesale Delivery</span>
+                    <h1 class="hero-title font-weight-bolder display-3 mb-4 line-height-tight">
+                        Your Trusted Supplier for <br class="d-none d-md-block"><span class="text-warning">Groceries & Beverages</span>
                     </h1>
-                    <p class="text-white mb-3">
-                        Fresh snacks, drinks, coffee powders, noodles, and
-                        specialty Filipino products delivered wholesale across
-                        UAE.
+                    <p class="hero-subtitle mb-4 lead font-weight-bold ml-md-auto mx-auto" style="font-size: 1.25rem; max-width: 500px;">
+                        Order bulk supplies of top Filipino brands like Barako Coffee, Maggi, Gatorade, and more. Delivered fast across the UAE.
                     </p>
-                    <div class="btn-wrapper mb-3">
-                        <a class="btn btn-success btn-lg mr-2" href="#products"
-                            >View Products</a
-                        >
-                        <a class="btn btn-info btn-lg" href="#contact"
-                            >Order Now</a
-                        >
+                    <div class="btn-wrapper mb-4">
+                        <a class="btn btn-warning btn-round btn-lg px-5 shadow-sm" href="#products">Start Shopping</a>
                     </div>
-                </div>
-                <div class="col-lg-4 col-md-5">
-                    <!-- <img
-                        alt="AL AKLEH Van"
-                        class="img-fluid"
-                        src="assets/img/main1.png"
-                    />-->
                 </div>
             </div>
         </div>
     </div>
 
     <!-- Features Section -->
-    <section class="section section-lg">
+    <section class="section bg-white py-5 shadow-sm z-index-2 position-relative">
         <div class="container">
             <div class="row row-grid justify-content-center">
-                <div class="col-lg-3">
+                <div class="col-lg-4 text-center">
                     <div class="info">
-                        <div class="icon icon-primary">
-                            <i class="tim-icons icon-delivery-fast"></i>
+                        <div class="icon icon-success mb-3">
+                            <i class="tim-icons icon-delivery-fast text-success" style="font-size: 3rem;"></i>
                         </div>
-                        <h4 class="info-title">Fast Van Delivery</h4>
-                        <p>
-                            Our van delivers fresh products directly to your
-                            store or home anywhere in the UAE.
-                        </p>
+                        <h4 class="info-title text-dark font-weight-bold">Fast Van Delivery</h4>
+                        <p class="text-muted">Direct to your store or home anywhere in the UAE.</p>
                     </div>
                 </div>
-                <div class="col-lg-3">
+                <div class="col-lg-4 text-center">
                     <div class="info">
-                        <div class="icon icon-success">
-                            <i class="tim-icons icon-coins"></i>
+                        <div class="icon icon-primary mb-3">
+                            <i class="tim-icons icon-basket-simple text-primary" style="font-size: 3rem;"></i>
                         </div>
-                        <h4 class="info-title">Wide Product Range</h4>
-                        <p>
-                            Coffee powders, drinks, snacks, noodles, canned
-                            goods, and specialty Filipino groceries.
-                        </p>
+                        <h4 class="info-title text-dark font-weight-bold">Top Brands</h4>
+                        <p class="text-muted">Authentic Philippine coffee, Maggi, drinks, snacks, and noodles.</p>
                     </div>
                 </div>
-                <div class="col-lg-3">
+                <div class="col-lg-4 text-center">
                     <div class="info">
-                        <div class="icon icon-warning">
-                            <i class="tim-icons icon-badge"></i>
+                        <div class="icon icon-warning mb-3">
+                            <i class="tim-icons icon-badge text-warning" style="font-size: 3rem;"></i>
                         </div>
-                        <h4 class="info-title">Trusted Supplier</h4>
-                        <p>
-                            Reliable van sales and long-term partnerships with
-                            local shops and communities. Typical delivery TAT:
-                            24–48 hours for wholesale orders.
-                        </p>
+                        <h4 class="info-title text-dark font-weight-bold">Trusted Supplier</h4>
+                        <p class="text-muted">Reliable wholesale network and long-term partnerships.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Products Section -->
-    <section id="products" class="section section-lg section-coins">
-        <div class="container">
-            <div class="row text-center mb-5">
-                <div class="col-md-12">
-                    <h1>Our Popular Products</h1>
-                    <!-- <p>Top picks from our van sale across UAE</p> -->
-                </div>
-            </div>
-            <div class="row row-grid justify-content-center">
-                <div class="col-md-3">
-                    <div class="card card-coin card-plain">
-                        <div class="card-header">
-                            <!-- <img
-                                class="img-center img-fluid"
-                                src="assets/img/coffee.png"
-                                alt="Coffee Powders"
-                            /> -->
-                        </div>
-                        <div class="card-body text-center">
-                            <h4 class="text-uppercase">Coffee Powders</h4>
-                            <p>
-                                High-quality Philippine coffee powders for your
-                                daily brew
-                            </p>
-                        </div>
-                        <div class="card-footer text-center">
-                            <button class="btn btn-primary btn-simple">
-                                Order Now
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="card card-coin card-plain">
-                        <div class="card-header">
-                            <!-- <img
-                                class="img-center img-fluid"
-                                src="assets/img/drinks.png"
-                                alt="Drinks"
-                            /> -->
-                        </div>
-                        <div class="card-body text-center">
-                            <h4 class="text-uppercase">Drinks</h4>
-                            <p>
-                                Soft drinks, juices, and traditional Filipino
-                                beverages for all tastes.
-                            </p>
-                        </div>
-                        <div class="card-footer text-center">
-                            <button class="btn btn-success btn-simple">
-                                Order Now
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="card card-coin card-plain">
-                        <div class="card-header">
-                            <!-- <img
-                                class="img-center img-fluid"
-                                src="assets/img/snacks.png"
-                                alt="Snacks"
-                            /> -->
-                        </div>
-                        <div class="card-body text-center">
-                            <h4 class="text-uppercase">Snacks</h4>
-                            <p>
-                                Chips, crackers, sweets, and other popular
-                                Filipino snacks.
-                            </p>
-                        </div>
-                        <div class="card-footer text-center">
-                            <button class="btn btn-info btn-simple">
-                                Order Now
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="card card-coin card-plain">
-                        <div class="card-header">
-                            <!-- <img
-                                class="img-center img-fluid"
-                                src="assets/img/noodles.png"
-                                alt="Noodles"
-                            /> -->
-                        </div>
-                        <div class="card-body text-center">
-                            <h4 class="text-uppercase">
-                                Noodles & Instant Foods
-                            </h4>
-                            <p>
-                                All your favorite Filipino instant noodles and
-                                ready-to-cook meals.
-                            </p>
-                        </div>
-                        <div class="card-footer text-center">
-                            <button class="btn btn-warning btn-simple">
-                                Order Now
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="section section-lg section-coins">
+    <!-- Products Catalog Section -->
+    <section id="products" class="section section-lg bg-light section-catalog">
         <div class="container">
             <div class="row">
-                <div class="col-md-12">
-                    <h2>About AL AKLEH</h2>
-                    <p>
-                        AL AKLEH is a trusted wholesale supplier in UAE,
-                        specializing in authentic Philippine foods and
-                        beverages. We supply supermarkets, restaurants, and
-                        groceries with a wide range of products including coffee
-                        powders, snacks, drinks, noodles, and canned goods. Our
-                        van sales network ensures timely delivery across UAE.
-                    </p>
+                <div class="col-md-12 text-center mb-5">
+                    <h2 class="title text-dark font-weight-bolder">Shop Featured Products</h2>
+                    <!-- Category Filters -->
+                    <div class="nav-pills-success d-flex justify-content-center mt-4 mb-5">
+                        <ul class="nav nav-pills nav-pills-custom">
+                            <li class="nav-item" *ngFor="let cat of categories">
+                                <a class="nav-link font-weight-bold" 
+                                   [class.active]="activeCategory === cat"
+                                   (click)="filterProducts(cat)" 
+                                   style="cursor:pointer">
+                                   {{ cat }}
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row row-grid">
+                <!-- Dynamic Product Loop -->
+                <div class="col-md-4 mb-4" *ngFor="let product of filteredProducts">
+                    <div class="card card-product product-card-light border-0 shadow-sm h-100">
+                        <div class="card-header position-relative bg-transparent border-0 p-3">
+                            <div class="img-wrapper rounded overflow-hidden">
+                                <img class="img-fluid w-100 object-fit-cover" [src]="product.imageUrl" [alt]="product.name" />
+                            </div>
+                            <div class="badge badge-success position-absolute px-3 py-2 shadow-sm text-uppercase" style="top:25px; left:25px; font-size: 0.75rem;">{{ product.unit }}</div>
+                        </div>
+                        <div class="card-body text-left d-flex flex-column px-4 pb-4 pt-0">
+                            <h6 class="category text-primary mb-2 font-weight-bold">{{ product.category }}</h6>
+                            <h4 class="card-title text-dark font-weight-bolder mb-2" style="font-size: 1.25rem;">{{ product.name }}</h4>
+                            <p class="card-description text-muted mb-4 flex-grow-1" style="font-size: 0.9rem;">{{ product.description }}</p>
+                            
+                            <div class="d-flex justify-content-between align-items-center mt-auto border-top pt-3">
+                                <h3 class="price mb-0 text-dark font-weight-bold" style="font-size: 1.4rem;">{{ product.price | currency:'AED ' }}</h3>
+                                <button class="btn btn-success btn-round btn-icon shadow-success btn-order" (click)="orderDirectWhatsApp(product)" tooltip="Order via WhatsApp">
+                                    <i class="tim-icons icon-send"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Empty State -->
+                <div class="col-12 text-center text-muted py-5" *ngIf="filteredProducts.length === 0">
+                    <i class="tim-icons icon-basket-simple mb-3 d-block" style="font-size: 3rem;"></i>
+                    <h4>No products found in this category.</h4>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- Contact Section -->
-    <!--<section id="contact" class="section section-lg">
-        <div class="container">
-            <div class="row justify-content-center text-center">
-                <div class="col-md-3">
-                    <div class="info">
-                        <div class="icon icon-primary">
-                            <i class="tim-icons icon-square-pin"></i>
-                        </div>
-                        <h5>Office Address</h5>
-                        <p>Dubai, UAE</p>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="info">
-                        <div class="icon icon-success">
-                            <i class="tim-icons icon-mobile"></i>
-                        </div>
-                        <h5>Phone</h5>
-                        <p>+971 55 123 4567</p>
-                        <!~~ replace with your real office/mobile ~~>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="info">
-                        <div class="icon icon-info">
-                            <i class="tim-icons icon-email-85"></i>
-                        </div>
-                        <h5>Email</h5>
-                        <p>info@alakleh.com</p>
-                        <!~~ replace with your real email ~~>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>-->
 
     <!-- Footer -->
-    <!-- <footer class="footer">
-        <div class="container">
+    <footer id="contact" class="footer bg-white border-top">
+        <div class="container py-5">
             <div class="row">
-                <div class="col-md-3"><h1 class="title">AL AKLEH•</h1></div>
-                <div class="col-md-3">
-                    <ul class="nav">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#home">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#products">Products</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#about">About Us</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#contact">Contact</a>
-                        </li>
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h2 class="title text-success font-weight-bold mb-3"><i class="tim-icons icon-basket-simple mr-2"></i>AL AKLEH</h2>
+                    <p class="text-muted">Premium wholesale goods delivered straight to your door in the UAE.</p>
+                </div>
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h5 class="text-dark font-weight-bold mb-4">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#home" class="text-muted">Home</a></li>
+                        <li class="mb-2"><a href="#products" class="text-muted">Shop Catalog</a></li>
+                        <li class="mb-2"><a href="#about" class="text-muted">About Us</a></li>
                     </ul>
                 </div>
-                <div class="col-md-3">
-                    <h3 class="title">Follow us:</h3>
-                    <div class="btn-wrapper profile">
-                        <a
-                            class="btn btn-icon btn-neutral btn-round btn-simple mr-1"
-                            href="#"
-                            ><i class="fab fa-facebook-square"></i
-                        ></a>
-                        <a
-                            class="btn btn-icon btn-neutral btn-round btn-simple mr-1"
-                            href="#"
-                            ><i class="fab fa-instagram"></i
-                        ></a>
-                        <a
-                            class="btn btn-icon btn-neutral btn-round btn-simple"
-                            href="#"
-                            ><i class="fab fa-twitter"></i
-                        ></a>
-                    </div>
+                <div class="col-md-4">
+                    <h5 class="text-dark font-weight-bold mb-4">Contact Us</h5>
+                    <ul class="list-unstyled text-muted">
+                        <li class="mb-2"><i class="tim-icons icon-mobile text-success mr-2"></i> +971 562401457</li>
+                        <li class="mb-2"><i class="tim-icons icon-email-85 text-success mr-2"></i> info@alakleh.com</li>
+                        <li class="mb-2"><i class="tim-icons icon-square-pin text-success mr-2"></i> Dubai, United Arab Emirates</li>
+                    </ul>
                 </div>
             </div>
-        </div>
-    </footer> -->
-
-    <footer id="contact" class="footer">
-        <div class="container">
-            <div class="row">
-                <!-- Company Name -->
-                <div class="col-md-3">
-                    <h1 class="title">AL AKLEH•</h1>
-                </div>
-
-                <!-- Navigation -->
-                <div class="col-md-3">
-                    <!-- <ul class="nav">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#home">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#products">Products</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#about">About Us</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#contact">Contact</a>
-                        </li>
-                    </ul> -->
-                </div>
-
-                <!-- Contact Details -->
-                <div class="col-md-6">
-                    <h5>Contact Us</h5>
-                    <ul class="list-unstyled">
-                        <li><strong>Phone:</strong> +971 562401457</li>
-                        <li><strong>Email:</strong> info@alakleh.com</li>
-                        <li>
-                            <strong>Address:</strong> Dubai, United Arab
-                            Emirates
-                        </li>
-                    </ul>
+            <div class="row mt-4 pt-4 border-top">
+                <div class="col-12 text-center text-muted">
+                    <small>&copy; 2026 AL AKLEH Goods Wholesalers LLC. All rights reserved.</small>
                 </div>
             </div>
         </div>

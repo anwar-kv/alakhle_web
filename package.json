@@ -3,7 +3,7 @@
   "version": "1.2.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "cross-env NODE_OPTIONS=--openssl-legacy-provider ng serve",
     "build": "cross-env CI=false cross-env PUBLIC_URL=/ cross-env NODE_OPTIONS=--openssl-legacy-provider ng build",
     "description": "BLK Design System Angular: Free Angular Design System For Bootstrap 4 and Angular",
     "test": "ng test",

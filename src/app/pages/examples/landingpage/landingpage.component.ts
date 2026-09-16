@@ -1,118 +1,140 @@
 import { Component, OnInit, OnDestroy } from "@angular/core";
-import Chart from "chart.js";
+
+export interface Product {
+    id: number;
+    name: string;
+    category: string;
+    price: number;
+    unit: string;
+    imageUrl: string;
+    description?: string;
+}
+
+export interface CartItem {
+    product: Product;
+    quantity: number;
+}
 
 @Component({
-  selector: "app-landingpage",
-  templateUrl: "landingpage.component.html"
+    selector: "app-landingpage",
+    templateUrl: "landingpage.component.html",
+    styleUrls: ["./landingpage.component.scss"],
 })
 export class LandingpageComponent implements OnInit, OnDestroy {
-  isCollapsed = true;
-  constructor() {}
+    isCollapsed = true;
 
-  ngOnInit() {
-    var body = document.getElementsByTagName("body")[0];
-    body.classList.add("landing-page");
+    // Product Data
+    categories: string[] = ["All", "Coffee", "Drinks", "Snacks", "Noodles"];
+    activeCategory: string = "All";
 
-    var canvas: any = document.getElementById("chartBig");
-    var ctx = canvas.getContext("2d");
-    var gradientFill = ctx.createLinearGradient(0, 350, 0, 50);
-    gradientFill.addColorStop(0, "rgba(228, 76, 196, 0.0)");
-    gradientFill.addColorStop(1, "rgba(228, 76, 196, 0.14)");
-    var chartBig = new Chart(ctx, {
-      type: "line",
-      responsive: true,
-      data: {
-        labels: [
-          "JUN",
-          "FEB",
-          "MAR",
-          "APR",
-          "MAY",
-          "JUN",
-          "JUL",
-          "AUG",
-          "SEP",
-          "OCT",
-          "NOV",
-          "DEC"
-        ],
-        datasets: [
-          {
-            label: "Data",
-            fill: true,
-            backgroundColor: gradientFill,
-            borderColor: "#e44cc4",
-            borderWidth: 2,
-            borderDash: [],
-            borderDashOffset: 0.0,
-            pointBackgroundColor: "#e44cc4",
-            pointBorderColor: "rgba(255,255,255,0)",
-            pointHoverBackgroundColor: "#be55ed",
-            //pointHoverBorderColor:'rgba(35,46,55,1)',
-            pointBorderWidth: 20,
-            pointHoverRadius: 4,
-            pointHoverBorderWidth: 15,
-            pointRadius: 4,
-            data: [80, 160, 200, 160, 250, 280, 220, 190, 200, 250, 290, 320]
-          }
-        ]
-      },
-      options: {
-        maintainAspectRatio: false,
-        legend: {
-          display: false
+    products: Product[] = [
+        {
+            id: 1,
+            name: "Barako Coffee (Philippine Blend)",
+            category: "Coffee",
+            price: 45.0,
+            unit: "Pack",
+            imageUrl: "assets/img/coffee.jpg",
+            description: "Authentic strong Barako coffee from the Philippines.",
         },
-
-        tooltips: {
-          backgroundColor: "#fff",
-          titleFontColor: "#ccc",
-          bodyFontColor: "#666",
-          bodySpacing: 4,
-          xPadding: 12,
-          mode: "nearest",
-          intersect: 0,
-          position: "nearest"
+        {
+            id: 2,
+            name: "Maggi Magic Sarap",
+            category: "Noodles",
+            price: 15.0,
+            unit: "Dozen",
+            imageUrl: "assets/img/maggi.jpg",
+            description: "All-in-one seasoning granules.",
         },
-        responsive: true,
-        scales: {
-          yAxes: [
-            {
-              barPercentage: 1.6,
-              gridLines: {
-                drawBorder: false,
-                color: "rgba(0,0,0,0.0)",
-                zeroLineColor: "transparent"
-              },
-              ticks: {
-                display: false,
-                suggestedMin: 0,
-                suggestedMax: 350,
-                padding: 20,
-                fontColor: "#9a9a9a"
-              }
-            }
-          ],
+        {
+            id: 3,
+            name: "Gatorade Blue Bolt",
+            category: "Drinks",
+            price: 65.0,
+            unit: "Case",
+            imageUrl: "assets/img/gatorade.jpg",
+            description: "Sports drink, 24x500ml.",
+        },
+        {
+            id: 4,
+            name: "Chocolates",
+            category: "Chocolates",
+            price: 35.0,
+            unit: "Case",
+            imageUrl: "assets/img/snacks.jpg",
+            description: "Spicy flavor, 30 bags.",
+        },
+        {
+            id: 5,
+            name: "Nescafé Classic (Philippines)",
+            category: "Coffee",
+            price: 48.0,
+            unit: "Jar",
+            imageUrl: "assets/img/coffee.jpg",
+            description: "Classic instant coffee.",
+        },
+        {
+            id: 6,
+            name: "Lucky Me! Pancit Canton",
+            category: "Noodles",
+            price: 32.0,
+            unit: "Case",
+            imageUrl: "assets/img/pancit.jpg",
+            description: "Chilimansi flavor, 40 packs.",
+        },
+    ];
 
-          xAxes: [
-            {
-              barPercentage: 1.6,
-              gridLines: {
-                drawBorder: false,
-                color: "rgba(0,0,0,0)",
-                zeroLineColor: "transparent"
-              },
-              ticks: {
-                padding: 20,
-                fontColor: "#9a9a9a"
-              }
-            }
-          ]
+    filteredProducts: Product[] = [];
+
+    constructor() {}
+
+    ngOnInit() {
+        var body = document.getElementsByTagName("body")[0];
+        body.classList.add("landing-page");
+        this.filterProducts("All");
+    }
+
+    ngOnDestroy() {
+        var body = document.getElementsByTagName("body")[0];
+        body.classList.remove("landing-page");
+    }
+
+    filterProducts(category: string) {
+        this.activeCategory = category;
+        if (category === "All") {
+            this.filteredProducts = this.products;
+        } else {
+            this.filteredProducts = this.products.filter(
+                (p) => p.category === category,
+            );
         }
-      }
-    });
-  }
-  ngOnDestroy() {
-    var body = document.getElementsByTagName("body")[0];
-    body.classList.remove("landing-page");
-  }
+    }
+
+    orderDirectWhatsApp(product: Product) {
+        const qtyStr = window.prompt(
+            `How many ${product.unit}s of ${product.name} would you like to order?`,
+            "1",
+        );
+        if (!qtyStr) return; // User cancelled
+
+        const quantity = parseInt(qtyStr, 10);
+        if (isNaN(quantity) || quantity <= 0) {
+            alert("Please enter a valid quantity.");
+            return;
+        }
+
+        const total = (product.price * quantity).toFixed(2);
+        let message = `Hello AL AKLEH! I would like to place a direct order:\\n\\n`;
+        message += `Item: ${product.name}\\n`;
+        message += `Quantity: ${quantity} x ${product.unit}\\n`;
+        message += `Total Estimated Price: ${total} AED\\n\\n`;
+        message += `Please let me know the delivery details.`;
+
+        const phoneNumber = "971562401457";
+        const encodedMessage = encodeURIComponent(message);
+        window.open(
+            `https://wa.me/${phoneNumber}?text=${encodedMessage}`,
+            "_blank",
+        );
+    }
 }
